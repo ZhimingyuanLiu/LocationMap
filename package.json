@@ -1,0 +1,22 @@
+{
+  "name": "idt-project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "aws-sdk": "^2.618.0",
+    "body-parser": "^1.19.0",
+    "consolidate": "^0.15.1",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "mapbox-gl": "^1.7.0",
+    "mongoose": "^5.8.11",
+    "pug": "^2.0.4",
+    "unirest": "^0.6.0"
+  }
+}

@@ -1,0 +1,7 @@
+h1
+ |Here are your query histories
+script.
+ console.log(!{result}[0].city)
+ul
+  for item in result
+    li= item.city +" , "+item.region+" , "+item.country

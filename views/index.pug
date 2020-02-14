@@ -1,0 +1,60 @@
+doctype html
+html
+  head
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    style.
+      input[type='text'] {
+      width: 130px;
+      box-sizing: border-box;
+      border: 2px solid #ccc;
+      border-radius: 4px;
+      font-size: 16px;
+      background-color: white;
+      background-image: url('searchicon.png');
+      background-position: 10px 10px;
+      background-repeat: no-repeat;
+      padding: 12px 20px 12px 40px;
+      -webkit-transition: width 0.4s ease-in-out;
+      transition: width 0.4s ease-in-out;
+      }
+      input[type='text']:focus {
+      width: 100%;
+      }
+      input[type='submit'] {
+      border-top: 2px solid #a3ceda;
+      border-left: 2px solid #a3ceda;
+      border-right:	2px solid #4f6267;
+      border-bottom: 2px solid #4f6267;
+      padding:  10px 20px !important;
+      font-size:  14px !important;
+      background-color:	#c4f1fe;
+      font-weight:		bold;
+      color:			#2d525d;
+      }
+      
+  body
+    p Please Enter the IP address and Open it in Map, and hit ENTER
+    form(action='/', method='post')
+      input(type='text', name='ip', placeholder='Search ip...' required='' )
+    
+    p --------------------------------------------------------------
+    p Please Enter the IP address and Your Phone Number (format [+]{1}[0-9]{11,14}) to get location info on Your phone
+    form(action='/send', method='get')
+      p
+        input#phone(type='text' name='phone' pattern='[+]{1}[0-9]{11,14}' placeholder='Phone Num' required='' )
+      p
+        input(type='text', name='ip', placeholder='Search ip...' required='' )
+      button Submit
+    
+    p --------------------------------------------------------------  
+    p
+    form(action='/histories?takeLast=y&range=range', method='get')
+        | Last N Locations
+        input(type="number" id="num" name="takeLast" value="20")
+        p
+            label(for='birthday') Start Date:
+            input#StartDate(type='date' name='start')
+        p
+            label(for='birthday') End Date:
+            input#EndDate(type='date' name='end')
+        input(type='submit', name='ip', value="QUERY HISTORIES")
